@@ -1,5 +1,3 @@
-<!--TODO: This is supposed to be the detail view of a selected task-->
-
 <script setup lang="ts">
 import { useTasks } from '../composables/useTasks'
 import { computed } from 'vue'
