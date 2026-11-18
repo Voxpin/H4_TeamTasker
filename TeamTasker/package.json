@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "test": "node --test",
+    "test": "vitest run src",
     "test:e2e": "playwright test --grep-invert @smoke",
     "test:smoke": "playwright test --grep @smoke --project=chromium",
     "build-only": "vite build",
@@ -27,6 +27,7 @@
     "typescript": "~6.0.0",
     "vite": "^8.2.2",
     "vite-plugin-vue-devtools": "^8.2.1",
+    "vitest": "^5.1.1",
     "vue-tsc": "^3.3.11"
   },
   "engines": {
