@@ -1,5 +1,3 @@
-<!--TODO: This is supposed to be the main overview of all tasks-->
-
 <script setup lang="ts">
 import TaskCard from '../components/TaskCard.vue'
 import TaskFilters from '../components/TaskFilters.vue'
@@ -8,7 +6,7 @@ import { RouterLink } from 'vue-router'
 import { ref, computed } from 'vue'
 import { RouterView } from 'vue-router'
 
-const { tasks, isLoading, errorMessage, fetchTasks } = useTasks()
+const { tasks } = useTasks()
 const search = ref('')
 const status = ref('')
 const priority = ref('')
@@ -22,11 +20,9 @@ const filteredTasks = computed(() => {
     return matchesSearch && matchesStatus && matchesPriority
   })
 })
-
 </script>
 
 <template>
-  
   <TaskFilters v-model:search="search" v-model:status="status" v-model:priority="priority" />
   <RouterLink class="button-create" to="/create">Create a task ↗</RouterLink>
 	<div class="task-grid">

@@ -21,7 +21,6 @@ const priorityClass = computed(() => `priority-${props.task.priority.toLowerCase
 <template>
 	<div class="task-card" @click="openTask">
 			<h2>{{ task.title }}</h2>
-			<!-- <p>{{ task.description }}</p> -->
 			<span class="priority-badge" :class="priorityClass">
 			<p>priority: {{ task.priority }}</p>
 			</span>
