@@ -27,6 +27,25 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 
 Tasks are loaded from JSONPlaceholder's posts endpoint. Creating or editing a task sends a `POST` request to `https://jsonplaceholder.typicode.com/posts` with the task title, description, user, status, priority, and due date. JSONPlaceholder simulates writes rather than persisting them, so successful changes are kept in the app's in-memory task list and are lost when the page is reloaded.
 
+## End-to-end tests
+
+Install the Playwright browsers and run the deterministic browser tests:
+
+```sh
+npx playwright install
+npm run test:e2e
+```
+
+The E2E tests start the Vite development server and intercept the task API with fixture responses, so they do not depend on JSONPlaceholder or persist changes remotely. They run in Chromium, Firefox, and WebKit.
+
+Run the separately tagged smoke test against the live JSONPlaceholder API with:
+
+```sh
+npm run test:smoke
+```
+
+The smoke test requires network access and checks that real tasks load; it does not create or edit remote data.
+
 ## Project Setup
 
 ```sh
